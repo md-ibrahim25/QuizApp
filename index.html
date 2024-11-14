@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body>
+    <div
+      class="h-screen w-screen bg-gradient-to-tr from-green-600 via-purple-500 to-pink-500 flex justify-center items-center"
+    >
+      <div class="bg-white w-[90%] md:w-[70%] lg:w-[50%] rounded-lg p-7">
+        <div class="relative">
+          <h1 class="text-center text-3xl font-semibold text-blue-900">
+            Simple Quiz
+          </h1>
+          <div id="timer" class="absolute right-0 -top-2 border-teal-700 border-4  rounded-full w-12 h-12 flex items-center justify-center">10</div>
+          <div class="p-[1px] bg-gray-800 m-2"></div>
+          <div id="main-content" class="">
+            <div id="question" class="m-4 text-2xl font-bold">
+              Question Goes Here
+            </div>
+            <div id="answers" class="flex flex-col gap-4 my-7 w-[90%] mx-auto">
+              <button
+                class="p-2 border-2 border-black rounded font-semibold hover:bg-black hover:text-white"
+                
+              >
+                Answer1
+              </button>
+              <button
+                class="p-2 border-2 border-black rounded font-semibold hover:bg-black hover:text-white"
+               
+              >
+                Answer2
+              </button>
+              <button
+                class="p-2 border-2 border-black rounded font-semibold hover:bg-black hover:text-white"
+                
+              >
+                Answer3
+              </button>
+              <button
+                class="p-2 border-2 border-black rounded font-semibold hover:bg-black hover:text-white"
+                
+              >
+                Answer4
+              </button>
+            </div>
+            <div class="text-center">
+              <button
+                id="next"
+                class="bg-blue-950 text-white py-2 px-9 rounded hover:bg-green-600 hidden"
+                onclick="handleNext(event)"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+          <div
+            id="final-page"
+            class="text-center font-bold text-3xl bg-gradient-to-r from-blue-800 to-green-600 bg-clip-text flex-col items-center gap-10 m-3 p-6 text-transparent hidden"
+          >
+            Your Final score
+            <div
+              id="outer"
+              class="w-[220px] h-[220px] rounded-full flex justify-center items-center"
+              style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6)"
+            >
+              <div
+                id="inner"
+                class="w-[170px] h-[170px] rounded-full flex flex-col justify-center items-center"
+                style="box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.6)"
+              >
+                <div class="text-5xl m-3" id="score">7</div>
+                <div
+                  class="bg-gradient-to-tr from-green-600 via-purple-500 to-red-200 w-[140px] h-[3px]"
+                ></div>
+                <div class="text-5xl m-3">10</div>
+              </div>
+            </div>
+            <div><button
+                id="next"
+                class="bg-gradient-to-r from-blue-800 to-green-600 text-white py-2 px-9 rounded hover:from-green-500 hover:to-green-500 text-2xl"
+                onclick="handleReplay()"
+              >
+                Replay
+              </button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
