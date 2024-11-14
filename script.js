@@ -1,4 +1,3 @@
-
 const api = "https://the-trivia-api.com/v2/questions/";
 let currentQuestionIndex = 0;
 let currentQuestion;
@@ -6,11 +5,19 @@ let Questions = [];
 let score = 0;
 let optionsElement;
 let interval;
-let timer = document.getElementById('timer');;
+let timer = document.getElementById("timer");
 const nextBtn = document.getElementById("next");
 async function loadData() {
   Questions = await fetch(api).then((res) => res.json());
-  //   console.log(Questions);
+  console.log(Questions);
+}
+
+function handleStart() {
+  const start = document.getElementById("start");
+  console.log("start");
+  const Container = document.getElementById("container");
+  start.classList.add("hidden");
+  Container.classList.remove("opacity-30", "cursor-not-allowed");
   loadQuestion();
 }
 
@@ -103,11 +110,17 @@ function handleReplay() {
   loadData();
   const mainContent = document.getElementById("main-content");
   const finalPage = document.getElementById("final-page");
-  const nextBtn = document.getElementById('next');
+  const nextBtn = document.getElementById("next");
   mainContent.classList.remove("hidden");
   finalPage.classList.add("hidden");
   finalPage.classList.remove("flex");
-  nextBtn.classList.add('hidden');
+  nextBtn.classList.add("hidden");
+
+  const start = document.getElementById("start");
+  console.log("start");
+  const Container = document.getElementById("container");
+  start.classList.remove("hidden");
+  Container.classList.add("opacity-30", "cursor-not-allowed");
 }
 
 loadData();

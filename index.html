@@ -10,12 +10,26 @@
     <div
       class="h-screen w-screen bg-gradient-to-tr from-green-600 via-purple-500 to-pink-500 flex justify-center items-center"
     >
+      <div>
+        <button
+          id="start"
+          class="bg-green-700 text-3xl font-semibold p-3 text-white rounded fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+          onclick="handleStart()"
+        >
+          Start
+        </button>
+      </div>
       <div class="bg-white w-[90%] md:w-[70%] lg:w-[50%] rounded-lg p-7">
-        <div class="relative">
+        <div class="relative opacity-30 cursor-not-allowed" id="container">
           <h1 class="text-center text-3xl font-semibold text-blue-900">
             Simple Quiz
           </h1>
-          <div id="timer" class="absolute right-0 -top-2 border-teal-700 border-4  rounded-full w-12 h-12 flex items-center justify-center">10</div>
+          <div
+            id="timer"
+            class="absolute right-0 -top-2 border-teal-700 border-4 rounded-full w-12 h-12 flex items-center justify-center"
+          >
+            10
+          </div>
           <div class="p-[1px] bg-gray-800 m-2"></div>
           <div id="main-content" class="">
             <div id="question" class="m-4 text-2xl font-bold">
@@ -23,26 +37,22 @@
             </div>
             <div id="answers" class="flex flex-col gap-4 my-7 w-[90%] mx-auto">
               <button
-                class="p-2 border-2 border-black rounded font-semibold hover:bg-black hover:text-white"
-                
+                class="p-2 border-2 border-black rounded font-semibold cursor-not-allowed"  disabled
               >
                 Answer1
               </button>
               <button
-                class="p-2 border-2 border-black rounded font-semibold hover:bg-black hover:text-white"
-               
+                class="p-2 border-2 border-black rounded font-semibold cursor-not-allowed" disabled
               >
                 Answer2
               </button>
               <button
-                class="p-2 border-2 border-black rounded font-semibold hover:bg-black hover:text-white"
-                
+                class="p-2 border-2 border-black rounded font-semibold cursor-not-allowed" disabled
               >
                 Answer3
               </button>
               <button
-                class="p-2 border-2 border-black rounded font-semibold hover:bg-black hover:text-white"
-                
+                class="p-2 border-2 border-black rounded font-semibold cursor-not-allowed" disabled
               >
                 Answer4
               </button>
@@ -79,13 +89,15 @@
                 <div class="text-5xl m-3">10</div>
               </div>
             </div>
-            <div><button
+            <div>
+              <button
                 id="next"
                 class="bg-gradient-to-r from-blue-800 to-green-600 text-white py-2 px-9 rounded hover:from-green-500 hover:to-green-500 text-2xl"
                 onclick="handleReplay()"
               >
                 Replay
-              </button></div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
